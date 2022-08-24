@@ -1,13 +1,24 @@
 import { useState } from "react";
+import axios from 'axios'
 
 function App() {
   const [username, setUsername ] = useState('')
   const [email, setEmail ] = useState('')
   const [password, setPassword ] = useState('')
+ const handleSubmit = (e)=>{
+  e.preventDefault()
+  console.log(username)
+  axios.post('http://localhost:8000', {
+    username:username, 
+    email:email, 
+    password:password
+  })
 
+ }
   return (
     <div className="App">
-      <form>
+      <h1>Signup form</h1>
+      <form onSubmit={handleSubmit}>
         <p>Username</p>
         <input 
         required 

@@ -7,8 +7,8 @@ function App() {
   const [password, setPassword ] = useState('')
  const handleSubmit = (e)=>{
   e.preventDefault()
-  console.log(username)
-  axios.post('http://localhost:8000', {
+  console.log(username, email, password)
+  axios.post('http://localhost:9000/signup', {
     username:username, 
     email:email, 
     password:password

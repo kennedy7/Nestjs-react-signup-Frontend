@@ -5,6 +5,8 @@ function App() {
   const [username, setUsername ] = useState('')
   const [email, setEmail ] = useState('')
   const [password, setPassword ] = useState('')
+  const [error, setError ] = useState('')
+
  const handleSubmit = (e)=>{
   e.preventDefault()
   console.log(username, email, password)
@@ -18,12 +20,14 @@ function App() {
   })
   .catch((err)=>{
     console.log(err.response)
+    setError(err.response.data.message)
   })
 
  }
   return (
     <div className="App">
       <h1>Signup form</h1>
+      <h4> {error} </h4>
       <form onSubmit={handleSubmit}>
         <p>Username</p>
         <input 

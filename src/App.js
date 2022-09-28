@@ -7,6 +7,7 @@ function App() {
   const [password, setPassword ] = useState('')
   const [error, setError ] = useState('')
 
+  //submit Handler
  const handleSubmit = (e)=>{
   e.preventDefault()
   console.log(username, email, password)
